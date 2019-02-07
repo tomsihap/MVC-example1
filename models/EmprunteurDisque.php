@@ -180,4 +180,12 @@ class EmprunteurDisque extends Db {
 
         return $data;
     }
+
+    public function emprunteur() {
+        return Emprunteur::findOne($this->idEmprunteur());
+    }
+
+    public function disque() {
+        return Disque::findOne($this->idDisque());
+    }
 }

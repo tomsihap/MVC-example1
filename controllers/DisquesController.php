@@ -5,14 +5,14 @@ class DisquesController {
     public function index() {
 
         $disques = Disque::findAll();
-        view('disques.index', compact());
+        view('disques.index', compact('disques'));
 
     }
 
     public function show($id) {
 
-        $disque = Disque::find($id);
-        view('disques.show', compact());
+        $disque = Disque::findOne($id);
+        view('disques.show', compact('disque'));
 
     }
 
@@ -23,14 +23,17 @@ class DisquesController {
     }
 
     public function save() {
+        $disque = new Disque($_POST['titre'], $_POST['artiste'], $_POST['id']);
+        $disque->save();
 
+        Header('Location: ../disques');
     }
 
     public function delete($id) {
 
         $disque = Disque::delete($id);
 
-        Header('Location: /');
+        Header('Location: ../disques');
     }
 
 }

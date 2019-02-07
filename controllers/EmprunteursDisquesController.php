@@ -5,31 +5,37 @@ class EmprunteursDisquesController {
     public function index() {
 
         $prets = EmprunteurDisque::findAll();
-        view('emprunteursDisques.index', compact());
+
+        view('emprunteursDisques.index', compact('prets'));
 
     }
 
     public function show($id) {
 
-        $pret = EmprunteurDisque::find($id);
+        $pret = EmprunteurDisque::findOne($id);
         view('emprunteursDisques.show', compact());
 
     }
 
     public function add() {
 
-        view('emprunteursDisques.add', compact());
+        $emprunteurs = Emprunteur::findAll();
+        $disques = Disque::findAll();
+
+        view('emprunteursDisques.add', compact('emprunteurs', 'disques'));
 
     }
 
     public function save() {
+        $pret = new EmprunteurDisque($_POST['id_emprunteur'], $_POST['id_disque']);
+        $pret->save();
 
+        Header('Location: ../prets');
     }
 
     public function delete($id) {
 
-        $pret = EmprunteurDisque::delete($id);
-
-        Header('Location: /');
+        $emprunteur = Emprunteur::delete($id);
+        Header('Location: ../prets');
     }
 }
