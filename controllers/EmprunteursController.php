@@ -4,21 +4,21 @@ class EmprunteursController {
 
     public function index() {
 
-        $emprunteurs = Emprunteurs::findAll();
-        view('emprunteurs.index', compact());
+        $emprunteurs = Emprunteur::findAll();
+        view('emprunteurs.index');
 
     }
 
     public function show($id) {
 
-        $emprunteur = Emprunteurs::find($id);
-        view('emprunteurs.show', compact());
+        $emprunteur = Emprunteur::find($id);
+        view('emprunteurs.show');
 
     }
 
     public function add() {
 
-        view('emprunteurs.add', compact());
+        view('emprunteurs.add');
 
     }
 
@@ -28,7 +28,7 @@ class EmprunteursController {
 
     public function delete($id) {
 
-        $emprunteur = Emprunteurs::delete($id);
+        $emprunteur = Emprunteur::delete($id);
         Header('Location: /');
     }
 }

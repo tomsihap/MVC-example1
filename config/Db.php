@@ -92,10 +92,8 @@ class Db {
             $req .= $reqOrder;
         }
         $response = $bdd->query($req);
-        $data = [];
-        while ($donnees = $response->fetch()) {
-            $data[] = $donnees;
-        }
+
+        $data = ($response) ? $response->fetchAll(PDO::FETCH_ASSOC) : [];
         return $data;
     }
     /**

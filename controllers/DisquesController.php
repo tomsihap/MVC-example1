@@ -18,7 +18,7 @@ class DisquesController {
 
     public function add() {
 
-        view('disques.add', compact());
+        view('disques.add');
 
     }
 

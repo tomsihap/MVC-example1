@@ -25,5 +25,6 @@ spl_autoload_register (function ($class) {
  */
 require 'config/app.php';
 require 'config/helpers.php';
+require 'config/database.php';
 require 'config/Db.php';
 require 'config/routes.php';

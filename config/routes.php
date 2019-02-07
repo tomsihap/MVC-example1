@@ -23,4 +23,6 @@ $routes->get('prets/add',               'EmprunteursDisquesController@add');
 $routes->post('prets/save',             'EmprunteursDisquesController@save');
 $routes->get('prets/delete/(\d+)',      'EmprunteursDisquesController@delete');
 
+$routes->get('/',                        'PagesController@home');
+
 $routes->run();
