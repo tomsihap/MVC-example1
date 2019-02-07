@@ -27,15 +27,19 @@ class EmprunteursDisquesController {
     }
 
     public function save() {
-        $pret = new EmprunteurDisque($_POST['id_emprunteur'], $_POST['id_disque']);
+        $pret = new EmprunteurDisque($_POST['id_emprunteur'], $_POST['id_disque'], $_POST['id']);
         $pret->save();
 
-        Header('Location: ../prets');
+        Header('Location: '. url('prets'));
     }
 
     public function delete($id) {
 
-        $emprunteur = Emprunteur::delete($id);
-        Header('Location: ../prets');
+        $pret = EmprunteurDisque::findOne($id);
+        $pret->delete();
+
+        Header('Location: '. url('prets'));
+        exit();
+
     }
 }

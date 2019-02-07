@@ -7,7 +7,7 @@
 
 <?php foreach($emprunteurs as $emprunteur) : ?>
 
-    <li><?= $emprunteur->prenom() ?> <?= $emprunteur->nom() ?></li>
+    <li><a href="<?= url('emprunteurs/' . $emprunteur->id()); ?>"><?= $emprunteur->prenom() ?> <?= $emprunteur->nom() ?></a></li>
 
 <?php endforeach; ?>
 

@@ -93,7 +93,8 @@ class Emprunteur extends Db {
             "prenom"       => $this->prenom()
         ];
 
-        if ($this->id > 0) return $this->update();
+
+        if ($this->id() > 0) return $this->update();
 
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
 
@@ -126,6 +127,12 @@ class Emprunteur extends Db {
         ];
         
         Db::dbDelete(self::TABLE_NAME, $data);
+
+        // On supprime aussi tous les emprunts !
+        Db::dbDelete('emprunteur_disque', [
+            'id_emprunteur' => $this->id()
+        ]);
+
         return;
     }
 

@@ -33,7 +33,9 @@ class Db {
         $req .= " (`".implode("`, `", array_keys($data))."`)";
         $req .= " VALUES (:".implode(", :", array_keys($data)).") ";
         $response = $bdd->prepare($req);
-        var_dump($req, $data);
+        
+        pdoSqlDebug($req, $data);
+        
         $response->execute($data);
         return $bdd->lastInsertId();
     }
@@ -52,6 +54,9 @@ class Db {
         $bdd = self::getDb();
         // Construction de la requête au format : INSERT INTO $table($data.keys) VALUES(:$data.keys) 
         $req  = "DELETE FROM " . $table . " WHERE " . array_keys($data)[0] . " = :" . array_keys($data)[0];
+
+        pdoSqlDebug($req, $data);
+
         $response = $bdd->prepare($req);
         $response->execute($data);
         return;
@@ -91,6 +96,9 @@ class Db {
             $req = substr($req, 0, -5);
             $req .= $reqOrder;
         }
+
+        pdoSqlDebug($req);
+
         $response = $bdd->query($req);
 
         $data = ($response) ? $response->fetchAll(PDO::FETCH_ASSOC) : [];
@@ -133,6 +141,9 @@ class Db {
         $req = substr($req, 0, -2);
         $req .= $whereIdString;
         $response = $bdd->prepare($req);
+
+        pdoSqlDebug($req, $data);
+
         $response->execute($data);
         return $bdd->lastInsertId();
     }

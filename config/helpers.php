@@ -38,5 +38,21 @@ function view($path, $vars = null, $include = true) {
         include($fullUrl);
     }
     return $fullUrl;
+}
+
+function pdoSqlDebug($request, $data = null) {
+
+    if ($data) {
+        foreach($data as $k => $v){
+            $request = preg_replace('/:'.$k.'/',"'".$v."'", $request);
+        }
+    }
     
+
+    $oldData = '';
+
+    if (file_exists('queries.log')) $oldData = file_get_contents('queries.log');
+    file_put_contents('queries.log', '['. date('Y-m-d H:i:s') . '] ' . $request . PHP_EOL . $oldData);
+
+    return $request;
 }

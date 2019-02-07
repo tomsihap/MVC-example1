@@ -23,17 +23,21 @@ class DisquesController {
     }
 
     public function save() {
+
         $disque = new Disque($_POST['titre'], $_POST['artiste'], $_POST['id']);
         $disque->save();
 
-        Header('Location: ../disques');
+        Header('Location: '. url('disques'));
     }
 
     public function delete($id) {
 
-        $disque = Disque::delete($id);
+        $disque = Disque::findOne($id);
+        $disque->delete();
 
-        Header('Location: ../disques');
+        Header('Location: '. url('disques'));
+        exit();
+
     }
 
 }

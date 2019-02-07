@@ -24,15 +24,19 @@ class EmprunteursController {
     }
 
     public function save() {
-        $emprunteur = new Emprunteur($_POST['nom'], $_POST['prenom']);
+
+        $emprunteur = new Emprunteur($_POST['nom'], $_POST['prenom'], $_POST['id']);
         $emprunteur->save();
 
-        Header('Location: ../emprunteurs');
+        Header('Location: '. url('emprunteurs'));
     }
 
     public function delete($id) {
 
-        $emprunteur = Emprunteur::delete($id);
-        Header('Location: ../emprunteurs');
+        $emprunteur = Emprunteur::findOne($id);
+        $emprunteur->delete();
+
+        Header('Location: '. url('emprunteurs'));
+        exit();
     }
 }

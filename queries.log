@@ -1,0 +1,106 @@
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '8'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '8'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '3'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '3'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '4'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '4'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '8'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '8'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '8'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '8'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '7'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '7'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '4'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '4'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:36] SELECT * FROM emprunteur_disque
+[2019-02-07 19:17:36] INSERT INTO emprunteur_disque (`id_emprunteur`, `id_disque`) VALUES ('8', '3') 
+[2019-02-07 19:17:31] SELECT * FROM disque
+[2019-02-07 19:17:31] SELECT * FROM emprunteur
+[2019-02-07 19:17:30] SELECT * FROM emprunteur WHERE `id` = '4'
+[2019-02-07 19:17:30] SELECT * FROM emprunteur WHERE `id` = '4'
+[2019-02-07 19:17:30] SELECT * FROM disque WHERE `id` = '8'
+[2019-02-07 19:17:30] SELECT * FROM disque WHERE `id` = '8'
+[2019-02-07 19:17:30] SELECT * FROM emprunteur WHERE `id` = '8'
+[2019-02-07 19:17:30] SELECT * FROM emprunteur WHERE `id` = '8'
+[2019-02-07 19:17:30] SELECT * FROM disque WHERE `id` = '7'
+[2019-02-07 19:17:30] SELECT * FROM disque WHERE `id` = '7'
+[2019-02-07 19:17:30] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:17:30] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:17:30] SELECT * FROM disque WHERE `id` = '4'
+[2019-02-07 19:17:30] SELECT * FROM disque WHERE `id` = '4'
+[2019-02-07 19:17:30] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:30] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:30] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:30] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:30] SELECT * FROM emprunteur_disque
+[2019-02-07 19:17:30] INSERT INTO emprunteur_disque (`id_emprunteur`, `id_disque`) VALUES ('4', '8') 
+[2019-02-07 19:17:25] SELECT * FROM disque
+[2019-02-07 19:17:25] SELECT * FROM emprunteur
+[2019-02-07 19:17:24] SELECT * FROM emprunteur WHERE `id` = '8'
+[2019-02-07 19:17:24] SELECT * FROM emprunteur WHERE `id` = '8'
+[2019-02-07 19:17:24] SELECT * FROM disque WHERE `id` = '7'
+[2019-02-07 19:17:24] SELECT * FROM disque WHERE `id` = '7'
+[2019-02-07 19:17:24] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:17:24] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:17:24] SELECT * FROM disque WHERE `id` = '4'
+[2019-02-07 19:17:24] SELECT * FROM disque WHERE `id` = '4'
+[2019-02-07 19:17:24] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:24] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:24] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:24] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:24] SELECT * FROM emprunteur_disque
+[2019-02-07 19:17:24] INSERT INTO emprunteur_disque (`id_emprunteur`, `id_disque`) VALUES ('8', '7') 
+[2019-02-07 19:17:20] SELECT * FROM disque
+[2019-02-07 19:17:20] SELECT * FROM emprunteur
+[2019-02-07 19:17:19] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:17:19] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:17:19] SELECT * FROM disque WHERE `id` = '4'
+[2019-02-07 19:17:19] SELECT * FROM disque WHERE `id` = '4'
+[2019-02-07 19:17:19] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:19] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:19] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:19] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:19] SELECT * FROM emprunteur_disque
+[2019-02-07 19:17:19] INSERT INTO emprunteur_disque (`id_emprunteur`, `id_disque`) VALUES ('2', '4') 
+[2019-02-07 19:17:15] SELECT * FROM disque
+[2019-02-07 19:17:15] SELECT * FROM emprunteur
+[2019-02-07 19:17:13] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:13] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:17:13] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:13] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-07 19:17:13] SELECT * FROM emprunteur_disque
+[2019-02-07 19:16:53] SELECT * FROM disque
+[2019-02-07 19:16:53] INSERT INTO disque (`titre`, `artiste`) VALUES ('School's Out', 'Alice Cooper') 
+[2019-02-07 19:16:47] SELECT * FROM disque
+[2019-02-07 19:16:47] DELETE FROM emprunteur_disque WHERE id_disque = '6'
+[2019-02-07 19:16:47] DELETE FROM disque WHERE id = '6'
+[2019-02-07 19:16:47] SELECT * FROM disque WHERE `id` = '6'
+[2019-02-07 19:16:45] SELECT * FROM disque WHERE `id` = '6'
+[2019-02-07 19:16:43] SELECT * FROM disque
+[2019-02-07 19:16:43] UPDATE disque SET `titre` = 'School's Out', `artiste` = 'Alice Cooper' WHERE id = '6'
+[2019-02-07 19:16:38] SELECT * FROM disque WHERE `id` = '6'
+[2019-02-07 19:16:34] SELECT * FROM disque
+[2019-02-07 19:16:34] UPDATE disque SET `titre` = 'Mascara & Monsters', `artiste` = 'School's Out' WHERE id = '6'
+[2019-02-07 19:16:30] SELECT * FROM disque WHERE `id` = '6'
+[2019-02-07 19:16:28] SELECT * FROM disque
+[2019-02-07 19:16:25] SELECT * FROM emprunteur WHERE `id` = '2'
+[2019-02-07 19:16:23] SELECT * FROM emprunteur
+[2019-02-07 19:16:23] UPDATE emprunteur SET `nom` = 'Sihap', `prenom` = 'Thomas' WHERE id = '1'
+[2019-02-07 19:16:21] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:16:20] SELECT * FROM emprunteur
+[2019-02-07 19:16:20] UPDATE emprunteur SET `nom` = 'Sihap', `prenom` = 'Tom' WHERE id = '1'
+[2019-02-07 19:16:19] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:15:03] SELECT * FROM emprunteur
+[2019-02-07 19:15:03] UPDATE emprunteur SET `nom` = 'Sihap', `prenom` = 'Tom' WHERE id = '1'
+[2019-02-07 19:14:58] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:14:57] SELECT * FROM emprunteur
+[2019-02-07 19:14:57] UPDATE emprunteur SET `nom` = 'Sihapanya', `prenom` = 'Tom' WHERE id = '1'
+[2019-02-07 19:13:21] SELECT * FROM emprunteur WHERE `id` = '1'
+[2019-02-07 19:13:00] SELECT * FROM emprunteur
+[2019-02-07 19:12:51] INSERT INTO emprunteur (`nom`, `prenom`) VALUES ('Solo', 'Han')

@@ -153,7 +153,7 @@ class EmprunteurDisque extends Db {
             $objectsList = [];
 
             foreach ($data as $d) {
-                $objectsList[] = new Emprunteur($d['nom'], $d['prenom'], intval($d['id']));
+                $objectsList[] = new EmprunteurDisque($d['id_emprunteur'], $d['id_disque'], intval($d['id']));
 
             }
             return $objectsList;
@@ -174,7 +174,7 @@ class EmprunteurDisque extends Db {
         else return;
 
         if ($object) {
-            $article = new Emprunteur($data['nom'], $data['prenom'], intval($data['id']));
+            $article = new EmprunteurDisque($data['id_emprunteur'], $data['id_disque'], intval($data['id']));
             return $article;
         }
 
