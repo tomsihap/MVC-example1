@@ -128,4 +128,58 @@ class Emprunteur extends Db {
         Db::dbDelete(self::TABLE_NAME, $data);
         return;
     }
+
+    public static function findAll($objects = true) {
+
+        $data = Db::dbFind(self::TABLE_NAME);
+        
+        if ($objects) {
+            $objectsList = [];
+
+            foreach ($data as $d) {
+
+                $objectsList[] = new Emprunteur($d['nom'], $d['prenom'], intval($d['id']));
+            }
+
+            return $objectsList;
+        }
+
+        return $data;
+    }
+
+    public static function find(array $request, $objects = true) {
+
+        $data = Db::dbFind(self::TABLE_NAME, $request);
+
+        if ($objects) {
+            $objectsList = [];
+
+            foreach ($data as $d) {
+                $objectsList[] = new Emprunteur($d['nom'], $d['prenom'], intval($d['id']));
+
+            }
+            return $objectsList;
+        }
+
+        return $data;
+    }
+
+    public static function findOne(int $id, $object = true) {
+
+        $request = [
+            ['id', '=', $id]
+        ];
+
+        $data = Db::dbFind(self::TABLE_NAME, $request);
+
+        if (count($data) > 0) $data = $data[0];
+        else return;
+
+        if ($object) {
+            $article = new Emprunteur($data['nom'], $data['prenom'], intval($data['id']));
+            return $article;
+        }
+
+        return $data;
+    }
 }
