@@ -6,6 +6,9 @@ class Emprunteur extends Db {
     protected $nom;
     protected $prenom;
 
+    const TABLE_NAME = "emprunteur";
+
+
     public function __construct($nom, $prenom, $id = null)
     {
         $this->setNom($nom);
@@ -71,5 +74,58 @@ class Emprunteur extends Db {
         $this->prenom = $prenom;
 
         return $this;
+    }
+
+    /**
+     * Méthodes CRUD :
+     * - find
+     * - findAll
+     * - findOne
+     * - save
+     * - update
+     * - delete
+     */
+
+    public function save() {
+
+        $data = [
+            "nom"         => $this->nom(),
+            "prenom"       => $this->prenom()
+        ];
+
+        if ($this->id > 0) return $this->update();
+
+        $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
+
+        $this->setId($nouvelId);
+
+        return $this;
+    }
+
+    public function update() {
+
+        if ($this->id > 0) {
+
+            $data = [
+                "nom"       => $this->nom(),
+                "prenom"    => $this->prenom(),
+                "id"        => $this->id()
+            ];
+
+            Db::dbUpdate(self::TABLE_NAME, $data);
+
+            return $this;
+        }
+
+        return;
+    }
+
+    public function delete() {
+        $data = [
+            'id' => $this->id(),
+        ];
+        
+        Db::dbDelete(self::TABLE_NAME, $data);
+        return;
     }
 }
