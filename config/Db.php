@@ -32,11 +32,12 @@ class Db {
         $req  = "INSERT INTO " . $table;
         $req .= " (`".implode("`, `", array_keys($data))."`)";
         $req .= " VALUES (:".implode(", :", array_keys($data)).") ";
-        $response = $bdd->prepare($req);
-        
+                
         pdoSqlDebug($req, $data);
-        
+
+        $response = $bdd->prepare($req);
         $response->execute($data);
+
         return $bdd->lastInsertId();
     }
     /**
@@ -59,6 +60,7 @@ class Db {
 
         $response = $bdd->prepare($req);
         $response->execute($data);
+
         return;
     }
     /**
@@ -102,6 +104,7 @@ class Db {
         $response = $bdd->query($req);
 
         $data = ($response) ? $response->fetchAll(PDO::FETCH_ASSOC) : [];
+
         return $data;
     }
     /**
@@ -140,11 +143,30 @@ class Db {
         }
         $req = substr($req, 0, -2);
         $req .= $whereIdString;
-        $response = $bdd->prepare($req);
-
+        
         pdoSqlDebug($req, $data);
-
+        
+        $response = $bdd->prepare($req);
         $response->execute($data);
+
         return $bdd->lastInsertId();
+    }
+
+    public static function dbJoin(string $table1, string $table2, array $columns) {
+
+        $bdd = self::getDb();
+
+        $req = "SELECT " . implode(', ', $columns);
+        $req .= " FROM " . $table1;
+        $req .= " INNER JOIN " . $table2 . " ON ";
+        $req .= $table2 . ".id = " . $table1 . ".id_" . $table2;
+
+        pdoSqlDebug($req);
+
+        $res = $bdd->query($req);
+        $data = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $data;
+
     }
 }

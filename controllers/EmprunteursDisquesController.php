@@ -42,4 +42,8 @@ class EmprunteursDisquesController {
         exit();
 
     }
+
+    public function join() {
+        var_dump(EmprunteurDisque::join('emprunteur', ['nom']));
+    }
 }

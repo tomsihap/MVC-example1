@@ -1,3 +1,7 @@
+[2019-02-07 19:23:16] SELECT nom FROM emprunteur_disque INNER JOIN emprunteur ON emprunteur.id = emprunteur_disque.id_emprunteur
+[2019-02-07 19:22:35] SELECT nom FROM emprunteur_disque INNER JOIN emprunteur ON emprunteur.id = emprunteur_disque.id_emprunteur
+[2019-02-07 19:22:15]  SELECT nom FROM emprunteur_disque INNER JOIN emprunteur ON emprunteur.id = emprunteur_disqueid_emprunteur
+[2019-02-07 19:21:42]  SELECT nom FROM emprunteur_disque INNER JOIN emprunteurs ON emprunteurs.id = emprunteur_disqueid_emprunteurs
 [2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '8'
 [2019-02-07 19:17:36] SELECT * FROM emprunteur WHERE `id` = '8'
 [2019-02-07 19:17:36] SELECT * FROM disque WHERE `id` = '3'

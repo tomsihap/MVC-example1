@@ -188,4 +188,10 @@ class EmprunteurDisque extends Db {
     public function disque() {
         return Disque::findOne($this->idDisque());
     }
+
+    public static function join($table, $columns) {
+        $data = Db::dbJoin(self::TABLE_NAME, $table, $columns);
+
+        return $data;
+    }
 }

@@ -24,5 +24,6 @@ $routes->post('prets/save',             'EmprunteursDisquesController@save');
 $routes->get('prets/delete/(\d+)',      'EmprunteursDisquesController@delete');
 
 $routes->get('/',                        'PagesController@home');
+$routes->get('/testjoin',                'EmprunteursDisquesController@join');
 
 $routes->run();
