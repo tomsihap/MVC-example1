@@ -189,9 +189,125 @@ class EmprunteurDisque extends Db {
         return Disque::findOne($this->idDisque());
     }
 
-    public static function join($table, $columns) {
-        $data = Db::dbJoin(self::TABLE_NAME, $table, $columns);
+    // Liste des noms des emprunteurs
+    public static function listeNomsEmprunteurs() {
 
-        return $data;
+        $req = 'SELECT nom, prenom
+                FROM emprunteur_disque
+                INNER JOIN emprunteur ON emprunteur.id = emprunteur_disque.id';
+
+        return $data = Db::dbQuery($req);
     }
+
+    // Nombre de disques par emprunteur
+    public static function nombreDisquesParEmprunteur() {
+
+        $req = 'SELECT prenom, nom, count(*)
+                FROM emprunteur_disque
+                INNER JOIN emprunteur ON emprunteur.id = emprunteur_disque.id_emprunteur
+                GROUP BY emprunteur_disque.id_emprunteur
+                ';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Nombre d'emprunteurs
+    public static function nbEmprunteurs() {
+
+        $req = 'SELECT count(DISTINCT id_emprunteurs)
+                FROM emprunteur_disque
+                ';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Nombre de disques différents empruntés
+    public static function nbDisquesEmpruntes() {
+
+        $req = 'SELECT count(DISTINCT id_disque)
+                FROM emprunteur_disque
+                ';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Nombre d'emprunts
+    public static function nbEmprunts() {
+
+        $req = 'SELECT count(*)
+                FROM emprunteur_disque
+                ';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Liste des disques non empruntés
+    public static function listeDisquesNonEmpruntes() {
+
+        $req = 'SELECT *
+                FROM disque
+                LEFT JOIN emprunteur_disque ON disque.id = emprunteur_disque.id_disque
+                WHERE id_emprunteur IS NULL';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Nombre de disques non empruntés
+    public static function nbDisquesNonEmpruntes() {
+
+        $req = 'SELECT count(DISTINCT titre)
+                FROM disque
+                LEFT JOIN emprunteur_disque ON disque.id = emprunteur_disque.id_disque
+                WHERE id_emprunteur IS NULL';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Liste d'emprunteurs n'ayant rien emprunté
+    public static function listeEmprunteursSansPret() {
+
+        $req = 'SELECT prenom, nom
+                FROM emprunteur
+                LEFT JOIN emprunteur_disque ON emprunteur.id = emprunteur_disque.id_emprunteur
+                WHERE emprunteur_disque.id_disque IS NULL';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Nombre de disques empruntés par Han Solo
+    public static function nbDisquesHanSolo() {
+
+        $req = 'SELECT prenom, nom, count(*)
+                FROM emprunteur
+                INNER JOIN emprunteur_disque ON emprunteur.id = emprunteur_disque.id_emprunteur
+                WHERE emprunteur.nom = "Solo"
+                GROUP BY emprunteur_disque.id_emprunteur';
+
+        return $data = Db::dbQuery($req);   
+    }
+
+    // Liste des disques empruntés par Han Solo
+    public static function listeDisquesHanSolo() {
+
+        $req = 'SELECT titre, artiste
+                FROM emprunteur
+                INNER JOIN emprunteur_disque ON emprunteur.id = emprunteur_disque.id_emprunteur
+                INNER JOIN disque ON disque.id = emprunteur_disque.id_disque
+                WHERE emprunteur.nom = "Solo"';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Liste des emprunteurs, avec le nom du disque, meme ceux qui n'ont pas emprunté de disque
+    public static function listeEmprunteursDisques() {
+        
+        $req = 'SELECT titre, artiste, nom, prenom
+                FROM disque
+                LEFT JOIN emprunteur_disque ON disque.id = emprunteur_disque.id_disque
+                LEFT JOIN emprunteur ON emprunteur.id = emprunteur_disque.id_emprunteur';
+
+        return $data = Db::dbQuery($req);
+    }
+
+    // Liste des disques, avec le nom de l'emprunteur, meme ceux qui n'ont pas été empruntés
 }

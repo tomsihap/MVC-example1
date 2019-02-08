@@ -43,7 +43,15 @@ class EmprunteursDisquesController {
 
     }
 
-    public function join() {
-        var_dump(EmprunteurDisque::join('emprunteur', ['nom']));
+    public function listeNomsEmprunteurs() {
+
+        $data = EmprunteurDisque::listeNomsEmprunteurs();
+        var_dump($data);
+    }
+
+    public function nombreDisquesParEmprunteur() {
+
+        $data = EmprunteurDisque::nombreDisquesParEmprunteur();
+        var_dump($data);
     }
 }

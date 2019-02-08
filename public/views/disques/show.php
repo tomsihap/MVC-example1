@@ -10,7 +10,7 @@
     <button class="btn btn-primary" type="submit">Editer un disque</button>
 
     <?php if (isset($disque)) : ?>
-        <a href="<?= url('disques/delete/' . $disque->id()) ?>" class="btn btn-danger" type="submit">Supprimer le disque</a>
+        <a href="<?= url('disques/delete/' . $disque->id()) ?>" class="btn btn-danger delete" type="submit">Supprimer le disque</a>
     <?php endif; ?>
     
 

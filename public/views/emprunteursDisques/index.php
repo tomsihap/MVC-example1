@@ -7,7 +7,7 @@
 <?php foreach($prets as $pret) : ?>
 
     <li>
-    <?= $pret->disque()->artiste() ?> (<?= $pret->disque()->titre() ?>) - <?= $pret->emprunteur()->prenom() ?> <?= $pret->emprunteur()->nom() ?> (<a href="<?=url('/prets/delete/' . $pret->id())?>">supprimer</a>)</li>
+    <?= $pret->disque()->artiste() ?> (<?= $pret->disque()->titre() ?>) - <?= $pret->emprunteur()->prenom() ?> <?= $pret->emprunteur()->nom() ?> (<a class="delete" href="<?=url('/prets/delete/' . $pret->id())?>">supprimer</a>)</li>
 
 <?php endforeach; ?>
 

@@ -10,11 +10,10 @@
     <button class="btn btn-primary" type="submit">Editer un emprunteur</button>
 
     <?php if (isset($emprunteur)) : ?>
-        <a href="<?= url('emprunteurs/delete/' . $emprunteur->id()) ?>" class="btn btn-danger" type="submit">Supprimer l'emprunteur</a>
+        <a href="<?= url('emprunteurs/delete/' . $emprunteur->id()) ?>" class="btn btn-danger delete" type="submit">Supprimer l'emprunteur</a>
     <?php endif; ?>
 
 </form>
-
 
 <?php $content = ob_get_clean(); ?>
 

@@ -24,6 +24,9 @@ $routes->post('prets/save',             'EmprunteursDisquesController@save');
 $routes->get('prets/delete/(\d+)',      'EmprunteursDisquesController@delete');
 
 $routes->get('/',                        'PagesController@home');
-$routes->get('/testjoin',                'EmprunteursDisquesController@join');
+
+// Exercices de requêtes
+$routes->get('/listeNomsEmprunteurs',    'EmprunteursDisquesController@listeNomsEmprunteurs');
+$routes->get('/nombreDisquesParEmprunteur',    'EmprunteursDisquesController@nombreDisquesParEmprunteur');
 
 $routes->run();

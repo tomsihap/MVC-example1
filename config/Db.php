@@ -1,7 +1,8 @@
 <?php
 class Db {
     public function __construct() { /** */ }
-    private static function getDb() {
+    
+    protected static function getDb() {
         try {
             // Essaie de faire ce script...
             $bdd = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8;port='.DB_PORT, DB_USER, DB_PWD);
@@ -167,6 +168,16 @@ class Db {
         $data = $res->fetchAll(PDO::FETCH_ASSOC);
 
         return $data;
+    }
 
+    public static function dbQuery(string $req) {
+
+        $bdd = self::getDb();
+
+        pdoSqlDebug($req);
+
+        $res = $bdd->query($req);
+
+        return $res->fetchAll(PDO::FETCH_ASSOC);
     }
 }
