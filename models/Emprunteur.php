@@ -76,6 +76,10 @@ class Emprunteur extends Db {
         return $this;
     }
 
+    public function prenomNom() {
+        return $this->prenom . ' ' . $this->nom;
+    }
+
     /**
      * Méthodes CRUD :
      * - find

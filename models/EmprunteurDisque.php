@@ -181,6 +181,7 @@ class EmprunteurDisque extends Db {
         return $data;
     }
 
+
     public function emprunteur() {
         return Emprunteur::findOne($this->idEmprunteur());
     }
@@ -252,6 +253,7 @@ class EmprunteurDisque extends Db {
         return $data = Db::dbQuery($req);
     }
 
+    //FIXME:
     // Nombre de disques non empruntés
     public static function nbDisquesNonEmpruntes() {
 
@@ -309,5 +311,6 @@ class EmprunteurDisque extends Db {
         return $data = Db::dbQuery($req);
     }
 
+    // FIXME:
     // Liste des disques, avec le nom de l'emprunteur, meme ceux qui n'ont pas été empruntés
 }

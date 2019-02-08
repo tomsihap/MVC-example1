@@ -29,6 +29,7 @@ class EmprunteursController {
         $emprunteur->save();
 
         Header('Location: '. url('emprunteurs'));
+        exit();
     }
 
     public function delete($id) {

@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <h1>Liste des emprunteurs</h1>
-<a href="<?=url('/emprunteurs/add')?>">Ajouter</a>
+<a href="<?= url('/emprunteurs/add') ?>">Ajouter</a>
 
 <ul>
 

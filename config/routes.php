@@ -27,6 +27,6 @@ $routes->get('/',                        'PagesController@home');
 
 // Exercices de requêtes
 $routes->get('/listeNomsEmprunteurs',    'EmprunteursDisquesController@listeNomsEmprunteurs');
-$routes->get('/nombreDisquesParEmprunteur',    'EmprunteursDisquesController@nombreDisquesParEmprunteur');
+$routes->get('/nombreDisquesParEmprunteur',   'EmprunteursDisquesController@nombreDisquesParEmprunteur');
 
 $routes->run();

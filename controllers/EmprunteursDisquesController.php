@@ -53,5 +53,6 @@ class EmprunteursDisquesController {
 
         $data = EmprunteurDisque::nombreDisquesParEmprunteur();
         var_dump($data);
+
     }
 }
