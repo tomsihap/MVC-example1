@@ -47,7 +47,6 @@ function pdoSqlDebug($request, $data = null) {
             $request = preg_replace('/:'.$k.'/',"'".$v."'", $request);
         }
     }
-    
 
     $oldData = '';
 
@@ -55,4 +54,5 @@ function pdoSqlDebug($request, $data = null) {
     file_put_contents('queries.log', '['. date('Y-m-d H:i:s') . '] ' . $request . PHP_EOL . $oldData);
 
     return $request;
+
 }

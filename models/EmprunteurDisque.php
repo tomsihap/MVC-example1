@@ -253,7 +253,7 @@ class EmprunteurDisque extends Db {
         return $data = Db::dbQuery($req);
     }
 
-    //FIXME:
+
     // Nombre de disques non empruntés
     public static function nbDisquesNonEmpruntes() {
 
@@ -311,6 +311,15 @@ class EmprunteurDisque extends Db {
         return $data = Db::dbQuery($req);
     }
 
-    // FIXME:
     // Liste des disques, avec le nom de l'emprunteur, meme ceux qui n'ont pas été empruntés
+    public static function listeDisquesEmprunteur() {
+
+        $req = 'SELECT nom, prenom, titre, artiste
+                FROM emprunteur
+                LEFT JOIN emprunteur_disque ON emprunteur.id = emprunteur_disque.id_emprunteur
+                LEFT JOIN disque ON disque.id = emprunteur_disque.id_disque';
+
+        return $data = Db::dbQuery($req);
+    }
+
 }

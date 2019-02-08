@@ -1,3 +1,6 @@
+[2019-02-08 11:03:11] SELECT * FROM disque WHERE `id` = '1'
+[2019-02-08 11:02:24] SELECT * FROM disque WHERE `id` = '2'
+[2019-02-08 11:02:22] SELECT * FROM disque
 [2019-02-08 10:03:58] SELECT * FROM emprunteur WHERE `id` = '11'
 [2019-02-08 10:03:58] SELECT * FROM emprunteur WHERE `id` = '11'
 [2019-02-08 10:03:58] SELECT * FROM disque WHERE `id` = '2'
